@@ -1,0 +1,71 @@
+Gugg iis:
+  ###### VARIABLES START ######
+
+  # Home Assistant variables
+  lovelace-background: url('/local/lovelace/background.png') transparent no-repeat bottom center  / cover
+
+  primary-text-color: "#e1e1e1"
+  primary-text-color-active: rgba(0, 0, 0, 0.6)
+  ha-card-border-width: 0
+  card-background-color: var(--atc-theme-card-background)
+
+  # Card variables
+  atc-theme-card-background: rgba(115, 115, 115, 0.2)
+  atc-theme-card-background-active: rgba(255, 255, 255, 0.9)
+  atc-theme-card-background-unavailable: rgba(115, 115, 115, 0.1)
+  atc-theme-card-border-radius: 16px
+  atc-theme-click-animation: "card_bounce 900ms cubic-bezier(0.22, 1, 0.36, 1)"
+
+  # Icon variables
+  atc-theme-icon-color: var(--primary-text-color)
+  atc-theme-icon-color-active: var(--primary-color)
+  atc-theme-icon-background: "#626a6f"
+  atc-theme-icon-background-active: var(--light-primary-color)
+  atc-theme-icon-background-unavailable: transparent
+  atc-theme-icon-background-opacity: 1
+
+  # Misc
+  atc-theme-card-gap: 16px
+  atc-theme-text-color-unavailable: "#9E9E9E"
+
+  atc-original-grid-template-columns: repeat(auto-fit,minmax(min(var(--grid-section-min-width),100%),1fr));
+
+  column-size: 6
+  column-count: 6
+
+  ###### VARIABLES END ######
+
+  card-mod-theme: Gugg iis
+  card-mod-view-yaml: |
+    hui-sections-view$:
+      ha-sortable:
+        .container:
+          .: |
+            .container.container {
+              grid-template-columns: 250px repeat(auto-fit,minmax(min(var(--grid-section-min-width),100%),1fr));
+              gap: calc(2 * var(--atc-theme-card-gap, 16px));
+              grid-template-areas: "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar .";
+              /* phone */
+              @media screen and (max-width: 750px) {
+                grid-template-columns: repeat(auto-fit,minmax(min(var(--grid-section-min-width),100%),1fr));
+                grid-template-areas: none;
+              }
+            }
+            .section:first-of-type {
+              grid-area: sidebar;
+              @media screen and (max-width: 750px) {
+                grid-area: unset;
+                display: none;
+              }
+            }
+          .section:
+            .section-wrapper:
+              hui-section:
+                hui-grid-section$:
+                  ha-sortable:
+                    .container:
+                      .: |
+                        .container.container {
+                          --column-count: 6;
+                          gap: var(--atc-theme-card-gap, 16px);
+                        }
