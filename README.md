@@ -43,8 +43,10 @@ frontend:
 4. **Restart** Home assistant to apply the changes.
 
 #### II. Install `Gugg Iis` theme
-
-1. Download the [latest release](https://github.com/s1rd4v3/gugg-iis-theme/releases/latest), extract it and drop the themes/gugg-iis.yaml file into your themes folder.
+##### HACS
+- Go to the hacs store and add the custom repo url `https://github.com/s1rd4v3/gugg-iis-theme` with the category set to `Theme`. Select it in the list and install the theme.
+##### Manual
+- Download the [latest release](https://github.com/s1rd4v3/gugg-iis-theme/releases/latest), extract it and drop the themes/gugg-iis.yaml file into your themes folder.
 
 ### Enable theme
 
