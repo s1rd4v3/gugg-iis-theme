@@ -28,8 +28,6 @@ Gugg iis:
   atc-theme-card-gap: 16px
   atc-theme-text-color-unavailable: "#9E9E9E"
 
-  atc-original-grid-template-columns: repeat(auto-fit,minmax(min(var(--grid-section-min-width),100%),1fr));
-
   column-size: 6
   column-count: 6
 
@@ -42,12 +40,12 @@ Gugg iis:
         .container:
           .: |
             .container.container {
-              grid-template-columns: 250px repeat(auto-fit,minmax(min(var(--grid-section-min-width),100%),1fr));
+              grid-template-columns: 250px repeat(auto-fit,minmax(min(var(--column-min-width),100%),1fr));
               gap: calc(2 * var(--atc-theme-card-gap, 16px));
               grid-template-areas: "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar .";
               /* phone */
               @media screen and (max-width: 750px) {
-                grid-template-columns: repeat(auto-fit,minmax(min(var(--grid-section-min-width),100%),1fr));
+                grid-template-columns: repeat(auto-fit,minmax(min(var(--column-min-width),100%),1fr));
                 grid-template-areas: none;
               }
             }
