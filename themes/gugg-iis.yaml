@@ -57,13 +57,12 @@ Gugg iis:
               }
             }
           .section:
-            .section-wrapper:
-              hui-section:
-                hui-grid-section$:
-                  ha-sortable:
-                    .container:
-                      .: |
-                        .container.container {
-                          --column-count: 6;
-                          gap: var(--atc-theme-card-gap, 16px);
-                        }
+            hui-section:
+              hui-grid-section$:
+                ha-sortable:
+                  .container:
+                    .: |
+                      .container.container {
+                        --column-count: 6;
+                        gap: var(--atc-theme-card-gap, 16px);
+                      }
