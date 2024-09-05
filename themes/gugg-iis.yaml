@@ -28,9 +28,6 @@ Gugg iis:
   atc-theme-card-gap: 16px
   atc-theme-text-color-unavailable: "#9E9E9E"
 
-  column-size: 6
-  column-count: 6
-
   ###### VARIABLES END ######
 
   card-mod-theme: Gugg iis
@@ -53,7 +50,6 @@ Gugg iis:
               grid-area: sidebar;
               @media screen and (max-width: 750px) {
                 grid-area: unset;
-                display: none;
               }
             }
           .section:
@@ -63,6 +59,5 @@ Gugg iis:
                   .container:
                     .: |
                       .container.container {
-                        --column-count: 6;
-                        gap: var(--atc-theme-card-gap, 16px);
+                        grid-template-columns: repeat(6,minmax(0,1fr));
                       }
