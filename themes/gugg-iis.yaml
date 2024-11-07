@@ -2,12 +2,11 @@ Gugg iis:
   ###### VARIABLES START ######
 
   # Home Assistant variables
-  lovelace-background: url('/local/lovelace/background.png') transparent no-repeat bottom center  / cover
-
   primary-text-color: "#e1e1e1"
   primary-text-color-active: rgba(0, 0, 0, 0.6)
   ha-card-border-width: 0
   card-background-color: var(--atc-theme-card-background)
+  ha-heading-card-title-font-size: 20px
 
   # Card variables
   atc-theme-card-background: rgba(115, 115, 115, 0.2)
@@ -31,33 +30,3 @@ Gugg iis:
   ###### VARIABLES END ######
 
   card-mod-theme: Gugg iis
-  card-mod-view-yaml: |
-    hui-sections-view$:
-      ha-sortable:
-        .container:
-          .: |
-            .container.container {
-              grid-template-columns: 250px repeat(auto-fit,minmax(min(var(--column-min-width),100%),1fr));
-              gap: calc(2 * var(--atc-theme-card-gap, 16px));
-              grid-template-areas: "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar ." "sidebar .";
-              /* phone */
-              @media screen and (max-width: 750px) {
-                grid-template-columns: repeat(auto-fit,minmax(min(var(--column-min-width),100%),1fr));
-                grid-template-areas: none;
-              }
-            }
-            .section:first-of-type {
-              grid-area: sidebar;
-              @media screen and (max-width: 750px) {
-                grid-area: unset;
-              }
-            }
-          .section:
-            hui-section:
-              hui-grid-section$:
-                ha-sortable:
-                  .container:
-                    .: |
-                      .container.container {
-                        grid-template-columns: repeat(6,minmax(0,1fr));
-                      }
