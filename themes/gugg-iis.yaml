@@ -30,3 +30,43 @@ Gugg iis:
   ###### VARIABLES END ######
 
   card-mod-theme: Gugg iis
+  card-mod-root-yaml: |
+    .: |
+      app-header {
+        display: none;
+        height: 0px;
+      }
+  card-mod-card-yaml: |
+    .: |
+      .navbar ha-card {
+        --icon-primary-color: #fff;
+        .route {
+          --icon-primary-color: #fff;
+        }
+        background: transparent;
+        &.navbar-card {
+          max-height: 50px;
+        }
+      }
+      .navbar ha-card:before {
+        content: "";
+        background: #2A3032AA;
+        border-radius: var(--navbar-border-radius);
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(30px);
+        -webkit-backdrop-filter: blur(30px);
+      }
+    ha-card:
+      .: |
+        mwc-list-item {
+          background-color: #000d;
+        }
+      &$ mushroom-card mushroom-select-option-control $:
+        .: |
+          mwc-list-item {
+            background-color: #000d;
+          }
